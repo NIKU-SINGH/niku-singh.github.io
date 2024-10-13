@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="This Blog lists my learning and discussion from Software Internals Book club that I am a part of. This Book club is run by Phil Eton more on this here.  Chapter 1 talks about the basics properties of">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Database-Design-and-Implementation">
+<meta property="og:url" content="https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/index.html">
+<meta property="og:site_name" content="Niku Singh">
+<meta property="og:description" content="This Blog lists my learning and discussion from Software Internals Book club that I am a part of. This Book club is run by Phil Eton more on this here.  Chapter 1 talks about the basics properties of">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-10-13T17:13:07.000Z">
+<meta property="article:modified_time" content="2024-10-13T17:14:57.107Z">
+<meta property="article:author" content="Niku Singh">
+<meta property="article:tag" content="Database, Database-Design-And-Implementation">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Database-Design-and-Implementation</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/10/13/hello-world/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&text=Database-Design-and-Implementation"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&is_video=false&description=Database-Design-and-Implementation"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Database-Design-and-Implementation&body=Check out this article: https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&name=Database-Design-and-Implementation&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&t=Database-Design-and-Implementation"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamentals-properties-of-a-database"><span class="toc-number">1.</span> <span class="toc-text">Fundamentals properties of a database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Record-Storage"><span class="toc-number">2.</span> <span class="toc-text">Record Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-user-Access"><span class="toc-number">3.</span> <span class="toc-text">Multi user Access</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dealing-with-Catastrophe"><span class="toc-number">4.</span> <span class="toc-text">Dealing with Catastrophe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Management"><span class="toc-number">5.</span> <span class="toc-text">Memory Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usability"><span class="toc-number">6.</span> <span class="toc-text">Usability</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-DB-Setup"><span class="toc-number">7.</span> <span class="toc-text">Simple DB Setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exercises"><span class="toc-number">8.</span> <span class="toc-text">Exercises</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Resources-shared-from-Community"><span class="toc-number"></span> <span class="toc-text">Resources shared from Community</span></a>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Database-Design-and-Implementation
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Niku Singh</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-10-13T17:13:07.000Z" class="dt-published" itemprop="datePublished">2024-10-13</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Database-Database-Design-And-Implementation/" rel="tag">Database, Database-Design-And-Implementation</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>This Blog lists my learning and discussion from Software Internals Book club that I am a part of. This Book club is run by Phil Eton more on this <a target="_blank" rel="noopener" href="https://eatonphil.com/2024-database-design-and-implementation.html">here</a>. </p>
+<p><strong>Chapter 1</strong> talks about the basics properties of Database and setting up of Simple DB.</p>
+<h3 id="Fundamentals-properties-of-a-database"><a href="#Fundamentals-properties-of-a-database" class="headerlink" title="Fundamentals properties of a database"></a>Fundamentals properties of a database</h3><ol>
+<li>Databases must be persistent. Otherwise, the records would disappear as soon as the computer is turned off.</li>
+<li>Databases can be shared. be shared by multiple concurrent users.</li>
+<li>Databases must be kept accurate. (Consistency)</li>
+<li>Databases must be usable. Ability to handle various queries, perform various functions,indexing, searching, etc</li>
+</ol>
+<h3 id="Record-Storage"><a href="#Record-Storage" class="headerlink" title="Record Storage"></a>Record Storage</h3><ul>
+<li>The most simple way to make DB persistent is to store records in the form of text files, one file per record type.</li>
+<li><strong>Problem with this approach</strong><ul>
+<li>large text ﬁles take too long to update and Read</li>
+<li>Searching of records in large text files is very inefficient as we have to do sequential scans.</li>
+<li>What if two threads try to write to the same file at the same time?</li>
+<li>What if we now want to create a new application that uses the same database? What if that application is running on a different machine?</li>
+<li>What if the machine crashes while our program is updating a record?</li>
+<li>What if we want to replicate the database on multiple machines for high availability?</li>
+</ul>
+</li>
+</ul>
+<h3 id="Multi-user-Access"><a href="#Multi-user-Access" class="headerlink" title="Multi user Access"></a>Multi user Access</h3><ul>
+<li>When a database is shared chances are there there can be multiple concurrent users trying to read or update a record. It may result in wrong data if both of them try to change the same record simultaneously. Therefore concurrency should be controlled by adding locks to the record until the first user completes its task.</li>
+</ul>
+<h3 id="Dealing-with-Catastrophe"><a href="#Dealing-with-Catastrophe" class="headerlink" title="Dealing with Catastrophe"></a>Dealing with Catastrophe</h3><ul>
+<li>A Database should be able to handle crashes, what if during an update it crashes we may result it half records updated and half remained unchanged, so a database must revert back its changes in case of a crash that is it must be atomic in nature.</li>
+</ul>
+<h3 id="Memory-Management"><a href="#Memory-Management" class="headerlink" title="Memory Management"></a>Memory Management</h3><p>The Author gives an analogy of buying a cookie from a store to explain this concept which in my sense is the best way</p>
+<ul>
+<li>Suppose you crave a chocolate chip cookie. There are three ways to get one:<ol>
+<li>From Kitchen</li>
+<li>From nearby Grocery store</li>
+<li>via mail order</li>
+</ol>
+</li>
+<li>In this analogy, your kitchen corresponds to RAM, the neighbourhood store corresponds to a ﬂash drive, and the the mail<br>order company corresponds to a disk.</li>
+<li>Suppose that it takes 5 seconds to get the cookie from your kitchen. Getting the cookie from the analogous store would require<br>5000 seconds, which is over an hour. This means going to the store, waiting in a very long line, buying the cookie, and returning. And getting the cookie from the analogous mail order company would require 500,000 seconds, which is over 5 days. That means ordering the cookie online and having it shipped using standard delivery. From this point of view, ﬂash and disk memory look terribly slow.</li>
+</ul>
+<h3 id="Usability"><a href="#Usability" class="headerlink" title="Usability"></a>Usability</h3><ul>
+<li>A Database must support a query language and utility functions in order to extract out the data more effectively and meaningfully, so that users don’t have to write their own implementation to access the data.</li>
+</ul>
+<h3 id="Simple-DB-Setup"><a href="#Simple-DB-Setup" class="headerlink" title="Simple DB Setup"></a>Simple DB Setup</h3><p>Our club member created a handy gist for setting up and running a simple database from the CLI <a target="_blank" rel="noopener" href="https://gist.github.com/ankithooda/b0d624aec9b3ed2882713d59feba4b11">SimpleDB setup instructions from terminal - NO IDE</a></p>
+<h3 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h3><ol>
+<li><strong>Suppose that an organisation needs to manage a relatively small number of shared records (say, 100 or so).</strong><ol>
+<li>Would it make sense to use a commercial database system to manage these records?<ol>
+<li>I believe if the dataset is not large managing it in some sort of spreadsheet or google sheets or Notion DB would make sense as they are easily shareable. No doubt databases like PostgreSQL and MySQL can easily operate on these amount of data but they are made for large datasets and comes with lots of built in features which might be an overkill for a simple data.</li>
+</ol>
+</li>
+<li>What features of a database system would not be required?<ol>
+<li><strong>indexing</strong>, <strong>query optimization</strong>, and <strong>caching</strong>  <strong>row-level locking</strong>, <strong>optimistic concurrency</strong></li>
+</ol>
+</li>
+<li>Would it be reasonable to use a spreadsheet to store these records? What are the potential problems?<ol>
+<li>Yes for small set of data it can be used.</li>
+<li>Problems<ol>
+<li><strong>Advanced Features</strong>: Features like complex queries, triggers, and data security (e.g., role-based access control) are minimal compared to traditional database systems.</li>
+<li><strong>Data Integrity</strong>: Unlike databases, these tools are less strict in maintaining data integrity (e.g., enforcing data types or relations).</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>Suppose you want to store a large amount of personal data in a database. What features of a database system wouldn’t you need?</strong><ol>
+<li>Shadring,Realtime Analytics, Row level security (as its personal so no one is going to access it except me), indexing and query optimization,data partitioning and more features but these are the features I know as of now.</li>
+</ol>
+</li>
+<li><strong>Suppose you want to store a large amount of personal data in a database. What features of a database system wouldn’t you need?</strong><ol>
+<li>How large would the data have to get before you would break down and store it in a database system?<ol>
+<li>Suppose I am a big shopaholic and shop everyday from various sites in that case the data is going to be very large and would need a place where I can store and query it effectively.</li>
+<li>A rule of thumb could be around <strong>100,000 records</strong> or more, where the performance of simpler solutions degrades significantly</li>
+<li><strong>Concurrency</strong>: If multiple users need to access or modify the data at the same time, a database with built-in concurrency control mechanisms (like <strong>transactions</strong> and <strong>locking</strong>) becomes necessary.</li>
+<li>If the data is sensitive (e.g., personal information), we’ll likely need a database sooner, regardless of data size, due to the enhanced <strong>security</strong>, <strong>backup</strong>, and <strong>encryption</strong> features database systems offer.</li>
+</ol>
+</li>
+<li>What changes to how you use the data would make it worthwhile to use a database system?<ol>
+<li>Multi user access</li>
+<li>frequent updates</li>
+<li>search and filtering</li>
+<li>backup and recovery</li>
+<li>security</li>
+<li>complex queries</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>If you know how to use a version control system (such as Git or Subversion), compare its features to those of a database system.<ol>
+<li>Does a version control system have a concept of a record?</li>
+<li>How does check-in&#x2F;checkout correspond to database concurrency control?</li>
+<li>How does a user perform a commit? How does a user undo uncommitted changes?</li>
+<li>Many version control systems save updates in difference ﬁles, which are small ﬁles that describe how to transform the previous version of the ﬁle into the new one. If a user needs to see the current version of the ﬁle, the system starts with the original ﬁle and applies all of the difference ﬁles to it. How well does this implementation strategy satisfy the needs of a database system?</li>
+</ol>
+</li>
+</ol>
+<h1 id="Resources-shared-from-Community"><a href="#Resources-shared-from-Community" class="headerlink" title="Resources shared from Community"></a>Resources shared from Community</h1><ol>
+<li>The actual speed of reading from different storage devices : <a target="_blank" rel="noopener" href="https://06536373581211777256.googlegroups.com/attach/2ccae46a120df/data_read_speed.png?part=0.1&view=1&vt=ANaJVrH1gVECTdjJE5uC1Id79Amda2R5GL76enKBM-RenpTrJ_60qUkx1gF_-D1OY0l3YWfnL2fCLWIUAwEa4fqCgD2O3u2pWwQqe89GqtP573EW_kXS6is">https://06536373581211777256.googlegroups.com/attach/2ccae46a120df/data_read_speed.png?part=0.1&amp;view=1&amp;vt=ANaJVrH1gVECTdjJE5uC1Id79Amda2R5GL76enKBM-RenpTrJ_60qUkx1gF_-D1OY0l3YWfnL2fCLWIUAwEa4fqCgD2O3u2pWwQqe89GqtP573EW_kXS6is</a></li>
+<li><a target="_blank" rel="noopener" href="https://cheat.sh/latencies">https://cheat.sh/latencies</a> </li>
+<li><a target="_blank" rel="noopener" href="https://colin-scott.github.io/personal_website/research/interactive_latency.html">https://colin-scott.github.io/personal_website/research/interactive_latency.html</a></li>
+</ol>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamentals-properties-of-a-database"><span class="toc-number">1.</span> <span class="toc-text">Fundamentals properties of a database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Record-Storage"><span class="toc-number">2.</span> <span class="toc-text">Record Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-user-Access"><span class="toc-number">3.</span> <span class="toc-text">Multi user Access</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dealing-with-Catastrophe"><span class="toc-number">4.</span> <span class="toc-text">Dealing with Catastrophe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Management"><span class="toc-number">5.</span> <span class="toc-text">Memory Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usability"><span class="toc-number">6.</span> <span class="toc-text">Usability</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-DB-Setup"><span class="toc-number">7.</span> <span class="toc-text">Simple DB Setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exercises"><span class="toc-number">8.</span> <span class="toc-text">Exercises</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Resources-shared-from-Community"><span class="toc-number"></span> <span class="toc-text">Resources shared from Community</span></a>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&text=Database-Design-and-Implementation"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&is_video=false&description=Database-Design-and-Implementation"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Database-Design-and-Implementation&body=Check out this article: https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&title=Database-Design-and-Implementation"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&name=Database-Design-and-Implementation&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://niku-singh.github.io/2024/10/13/Database-Design-and-Implementation/&t=Database-Design-and-Implementation"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Niku Singh
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
