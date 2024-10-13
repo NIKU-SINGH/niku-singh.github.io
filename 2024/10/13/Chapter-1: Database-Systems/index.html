@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="This Blog lists my learning and discussion from Software Internals Book club that I am a part of. This Book club is run by Phil Eton more on this here.  Chapter 1 talks about the basics properties of">
+    <meta name="description" content="This blog lists my learning and discussion from the Software Internals Book Club, which I am a part of. The book club is run by Phil Eaton. More on this here. For this book I would be building my own">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Database-Design-and-Implementation">
+<meta property="og:title" content="Database Design and Implementation">
 <meta property="og:url" content="https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/index.html">
 <meta property="og:site_name" content="Niku Singh">
-<meta property="og:description" content="This Blog lists my learning and discussion from Software Internals Book club that I am a part of. This Book club is run by Phil Eton more on this here.  Chapter 1 talks about the basics properties of">
+<meta property="og:description" content="This blog lists my learning and discussion from the Software Internals Book Club, which I am a part of. The book club is run by Phil Eaton. More on this here. For this book I would be building my own">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://niku-singh.github.io/images/Database%20Design%20and%20Implementation/Chapter-1:%20Database%20Systems/read_speed_from_storage_device.png">
 <meta property="og:image" content="https://niku-singh.github.io/images/Database%20Design%20and%20Implementation/Chapter-1:%20Database%20Systems/speed_latencies.png">
 <meta property="article:published_time" content="2024-10-13T17:13:07.000Z">
-<meta property="article:modified_time" content="2024-10-13T17:38:30.061Z">
+<meta property="article:modified_time" content="2024-10-13T17:42:35.810Z">
 <meta property="article:author" content="Niku Singh">
 <meta property="article:tag" content="Database, Database-Design-And-Implementation">
 <meta name="twitter:card" content="summary">
@@ -40,7 +40,7 @@
       
     
     <!-- title -->
-    <title>Database-Design-and-Implementation</title>
+    <title>Database Design and Implementation</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -100,23 +100,23 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&text=Database-Design-and-Implementation"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&is_video=false&description=Database-Design-and-Implementation"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Database-Design-and-Implementation&body=Check out this article: https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&name=Database-Design-and-Implementation&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&t=Database-Design-and-Implementation"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&text=Database Design and Implementation"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&is_video=false&description=Database Design and Implementation"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Database Design and Implementation&body=Check out this article: https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&name=Database Design and Implementation&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&t=Database Design and Implementation"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamentals-properties-of-a-database"><span class="toc-number">1.</span> <span class="toc-text">Fundamentals properties of a database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Record-Storage"><span class="toc-number">2.</span> <span class="toc-text">Record Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-user-Access"><span class="toc-number">3.</span> <span class="toc-text">Multi user Access</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dealing-with-Catastrophe"><span class="toc-number">4.</span> <span class="toc-text">Dealing with Catastrophe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Management"><span class="toc-number">5.</span> <span class="toc-text">Memory Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usability"><span class="toc-number">6.</span> <span class="toc-text">Usability</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-DB-Setup"><span class="toc-number">7.</span> <span class="toc-text">Simple DB Setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exercises"><span class="toc-number">8.</span> <span class="toc-text">Exercises</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Resources-shared-from-Community"><span class="toc-number"></span> <span class="toc-text">Resources shared from Community</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamental-Properties-of-a-Database"><span class="toc-number">1.</span> <span class="toc-text">Fundamental Properties of a Database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Record-Storage"><span class="toc-number">2.</span> <span class="toc-text">Record Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-user-Access"><span class="toc-number">3.</span> <span class="toc-text">Multi-user Access</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dealing-with-Catastrophe"><span class="toc-number">4.</span> <span class="toc-text">Dealing with Catastrophe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Management"><span class="toc-number">5.</span> <span class="toc-text">Memory Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usability"><span class="toc-number">6.</span> <span class="toc-text">Usability</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-DB-Setup"><span class="toc-number">7.</span> <span class="toc-text">Simple DB Setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exercises"><span class="toc-number">8.</span> <span class="toc-text">Exercises</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Resources-Shared-from-the-Community"><span class="toc-number">9.</span> <span class="toc-text">Resources Shared from the Community</span></a></li></ol>
       </div>
     
   </span>
@@ -129,7 +129,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        Database-Design-and-Implementation
+        Database Design and Implementation
     </h1>
 
 
@@ -161,100 +161,94 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <p>This Blog lists my learning and discussion from Software Internals Book club that I am a part of. This Book club is run by Phil Eton more on this <a target="_blank" rel="noopener" href="https://eatonphil.com/2024-database-design-and-implementation.html">here</a>. </p>
-<p><strong>Chapter 1</strong> talks about the basics properties of Database and setting up of Simple DB.</p>
-<h3 id="Fundamentals-properties-of-a-database"><a href="#Fundamentals-properties-of-a-database" class="headerlink" title="Fundamentals properties of a database"></a>Fundamentals properties of a database</h3><ol>
-<li>Databases must be persistent. Otherwise, the records would disappear as soon as the computer is turned off.</li>
-<li>Databases can be shared. be shared by multiple concurrent users.</li>
-<li>Databases must be kept accurate. (Consistency)</li>
-<li>Databases must be usable. Ability to handle various queries, perform various functions,indexing, searching, etc</li>
+    <p>This blog lists my learning and discussion from the Software Internals Book Club, which I am a part of. The book club is run by Phil Eaton. More on this <a target="_blank" rel="noopener" href="https://eatonphil.com/2024-database-design-and-implementation.html">here</a>.</p>
+<p>For this book I would be building my own SimpleDB Implementation in Golang more on that <a target="_blank" rel="noopener" href="https://github.com/NIKU-SINGH/simpleDB">here</a></p>
+<p><strong>Chapter 1</strong> talks about the basic properties of databases and the setup of a Simple DB.</p>
+<h3 id="Fundamental-Properties-of-a-Database"><a href="#Fundamental-Properties-of-a-Database" class="headerlink" title="Fundamental Properties of a Database"></a>Fundamental Properties of a Database</h3><ol>
+<li><strong>Persistence</strong>: Databases must be persistent; otherwise, records would disappear when the computer is turned off.</li>
+<li><strong>Sharing</strong>: Databases can be shared by multiple concurrent users.</li>
+<li><strong>Accuracy</strong>: Databases must remain consistent and accurate.</li>
+<li><strong>Usability</strong>: Databases should handle various queries, indexing, searching, and other functions efficiently.</li>
 </ol>
 <h3 id="Record-Storage"><a href="#Record-Storage" class="headerlink" title="Record Storage"></a>Record Storage</h3><ul>
-<li>The most simple way to make DB persistent is to store records in the form of text files, one file per record type.</li>
-<li><strong>Problem with this approach</strong><ul>
-<li>large text files take too long to update and Read</li>
-<li>Searching of records in large text files is very inefficient as we have to do sequential scans.</li>
-<li>What if two threads try to write to the same file at the same time?</li>
-<li>What if we now want to create a new application that uses the same database? What if that application is running on a different machine?</li>
-<li>What if the machine crashes while our program is updating a record?</li>
-<li>What if we want to replicate the database on multiple machines for high availability?</li>
+<li>The simplest way to make a database persistent is by storing records as text files, with one file per record type.</li>
+<li><strong>Problems with this approach</strong>:<ul>
+<li>Large text files take too long to update and read.</li>
+<li>Searching in large text files is inefficient as it requires sequential scans.</li>
+<li>Concurrent writes by multiple threads can lead to data corruption.</li>
+<li>Interoperability between different applications and machines becomes complex.</li>
+<li>A machine crash during an update could lead to inconsistent records.</li>
+<li>Replicating the database for high availability across multiple machines becomes difficult.</li>
 </ul>
 </li>
 </ul>
-<h3 id="Multi-user-Access"><a href="#Multi-user-Access" class="headerlink" title="Multi user Access"></a>Multi user Access</h3><ul>
-<li>When a database is shared chances are there there can be multiple concurrent users trying to read or update a record. It may result in wrong data if both of them try to change the same record simultaneously. Therefore concurrency should be controlled by adding locks to the record until the first user completes its task.</li>
+<h3 id="Multi-user-Access"><a href="#Multi-user-Access" class="headerlink" title="Multi-user Access"></a>Multi-user Access</h3><ul>
+<li>When databases are shared, multiple concurrent users may try to read or update a record simultaneously, leading to data inconsistencies. Concurrency control through locks ensures that records are locked until the first user completes the task.</li>
 </ul>
 <h3 id="Dealing-with-Catastrophe"><a href="#Dealing-with-Catastrophe" class="headerlink" title="Dealing with Catastrophe"></a>Dealing with Catastrophe</h3><ul>
-<li>A Database should be able to handle crashes, what if during an update it crashes we may result it half records updated and half remained unchanged, so a database must revert back its changes in case of a crash that is it must be atomic in nature.</li>
+<li>Databases should handle crashes effectively. If a crash occurs during an update, the database must revert to a consistent state, ensuring that updates are atomic in nature.</li>
 </ul>
-<h3 id="Memory-Management"><a href="#Memory-Management" class="headerlink" title="Memory Management"></a>Memory Management</h3><p>The Author gives an analogy of buying a cookie from a store to explain this concept which in my sense is the best way</p>
+<h3 id="Memory-Management"><a href="#Memory-Management" class="headerlink" title="Memory Management"></a>Memory Management</h3><p>The author gives an excellent analogy of buying a cookie to explain memory management:</p>
 <ul>
-<li>Suppose you crave a chocolate chip cookie. There are three ways to get one:<ol>
-<li>From Kitchen</li>
-<li>From nearby Grocery store</li>
-<li>via mail order</li>
-</ol>
-</li>
-<li>In this analogy, your kitchen corresponds to RAM, the neighborhood store corresponds to a ﬂash drive, and the the mail<br>order company corresponds to a disk.</li>
-<li>Suppose that it takes 5 seconds to get the cookie from your kitchen. Getting the cookie from the analogous store would require<br>5000 seconds, which is over an hour. This means going to the store, waiting in a very long line, buying the cookie, and returning. And getting the cookie from the analogous mail order company would require 500,000 seconds, which is over 5 days. That means ordering the cookie online and having it shipped using standard delivery. From this point of view, ﬂash and disk memory look terribly slow.</li>
+<li><strong>Kitchen (RAM)</strong>: Quick access (5 seconds).</li>
+<li><strong>Nearby Grocery Store (Flash Drive)</strong>: Slower access (5000 seconds).</li>
+<li><strong>Mail Order (Disk)</strong>: Slowest access (500,000 seconds).</li>
 </ul>
+<p>This analogy highlights the speed differences between memory types, with RAM being the fastest and disk being the slowest.</p>
 <h3 id="Usability"><a href="#Usability" class="headerlink" title="Usability"></a>Usability</h3><ul>
-<li>A Database must support a query language and utility functions in order to extract out the data more effectively and meaningfully, so that users don’t have to write their own implementation to access the data.</li>
+<li>A database must support query languages and utility functions to extract data effectively. This ensures users don’t have to implement their own methods for accessing data.</li>
 </ul>
-<h3 id="Simple-DB-Setup"><a href="#Simple-DB-Setup" class="headerlink" title="Simple DB Setup"></a>Simple DB Setup</h3><p>Our club member created a handy gist for setting up and running a simple database from the CLI <a target="_blank" rel="noopener" href="https://gist.github.com/ankithooda/b0d624aec9b3ed2882713d59feba4b11">SimpleDB setup instructions from terminal - NO IDE</a></p>
+<h3 id="Simple-DB-Setup"><a href="#Simple-DB-Setup" class="headerlink" title="Simple DB Setup"></a>Simple DB Setup</h3><p>Our club member created a handy <a target="_blank" rel="noopener" href="https://gist.github.com/ankithooda/b0d624aec9b3ed2882713d59feba4b11">gist for setting up and running a simple database from the CLI</a> without an IDE.</p>
 <h3 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h3><ol>
-<li><strong>Suppose that an organisation needs to manage a relatively small number of shared records (say, 100 or so).</strong><ol>
-<li>Would it make sense to use a commercial database system to manage these records?<ol>
-<li>I believe if the dataset is not large managing it in some sort of spreadsheet or google sheets or Notion DB would make sense as they are easily shareable. No doubt databases like PostgreSQL and MySQL can easily operate on these amount of data but they are made for large datasets and comes with lots of built in features which might be an overkill for a simple data.</li>
-</ol>
+<li><p><strong>Suppose an organization needs to manage a small number of shared records (e.g., 100 records).</strong></p>
+<ol>
+<li>Would it make sense to use a commercial database system for managing these records?<ul>
+<li>No, using a simple solution like Google Sheets, Notion, or Excel would make more sense for small datasets.</li>
+</ul>
 </li>
-<li>What features of a database system would not be required?<ol>
-<li><strong>indexing</strong>, <strong>query optimization</strong>, and <strong>caching</strong>  <strong>row-level locking</strong>, <strong>optimistic concurrency</strong></li>
-</ol>
+<li>What database features would not be required?<ul>
+<li>Features like indexing, query optimization, caching, row-level locking, and concurrency would be unnecessary.</li>
+</ul>
 </li>
-<li>Would it be reasonable to use a spreadsheet to store these records? What are the potential problems?<ol>
-<li>Yes for small set of data it can be used.</li>
-<li>Problems<ol>
-<li><strong>Advanced Features</strong>: Features like complex queries, triggers, and data security (e.g., role-based access control) are minimal compared to traditional database systems.</li>
-<li><strong>Data Integrity</strong>: Unlike databases, these tools are less strict in maintaining data integrity (e.g., enforcing data types or relations).</li>
-</ol>
+<li>Could a spreadsheet be used to store these records? What are the potential problems?<ul>
+<li>Yes, but problems include lack of advanced features like complex queries and data security, as well as limited data integrity controls.</li>
+</ul>
 </li>
 </ol>
 </li>
-</ol>
+<li><p><strong>Suppose you want to store a large amount of personal data. What database features wouldn’t you need?</strong></p>
+<ul>
+<li>You wouldn’t need sharding, real-time analytics, or row-level security if no one else accesses the data. Some features like query optimization might still not be necessary.</li>
+</ul>
 </li>
-<li><strong>Suppose you want to store a large amount of personal data in a database. What features of a database system wouldn’t you need?</strong><ol>
-<li>Sharding,Realtime Analytics, Row level security (as its personal so no one is going to access it except me), indexing and query optimization,data partitioning and more features but these are the features I know as of now.</li>
-</ol>
+<li><p><strong>How large does your data need to be before storing it in a database becomes necessary?</strong></p>
+<ul>
+<li>For personal data, if the dataset grows to over 100,000 records, using a database system would become essential for efficiency.</li>
+<li>Other factors include the need for concurrency control, data security, and backup mechanisms.</li>
+</ul>
 </li>
-<li><strong>Suppose you want to store a large amount of personal data in a database. What features of a database system wouldn’t you need?</strong><ol>
-<li>How large would the data have to get before you would break down and store it in a database system?<ol>
-<li>Suppose I am a big shopaholic and shop everyday from various sites in that case the data is going to be very large and would need a place where I can store and query it effectively.</li>
-<li>A rule of thumb could be around <strong>100,000 records</strong> or more, where the performance of simpler solutions degrades significantly</li>
-<li><strong>Concurrency</strong>: If multiple users need to access or modify the data at the same time, a database with built-in concurrency control mechanisms (like <strong>transactions</strong> and <strong>locking</strong>) becomes necessary.</li>
-<li>If the data is sensitive (e.g., personal information), we’ll likely need a database sooner, regardless of data size, due to the enhanced <strong>security</strong>, <strong>backup</strong>, and <strong>encryption</strong> features database systems offer.</li>
-</ol>
+<li><p><strong>Comparing a version control system (like Git) to a database system:</strong></p>
+<ol>
+<li>Does a version control system have a concept of a record?<ul>
+<li>Yes, it can treat commits as records.</li>
+</ul>
 </li>
-<li>What changes to how you use the data would make it worthwhile to use a database system?<ol>
-<li>Multi user access</li>
-<li>frequent updates</li>
-<li>search and filtering</li>
-<li>backup and recovery</li>
-<li>security</li>
-<li>complex queries</li>
-</ol>
+<li>How does check-in&#x2F;checkout correspond to database concurrency control?<ul>
+<li>It functions similarly to record locks, ensuring no conflicts between changes.</li>
+</ul>
 </li>
-</ol>
+<li>How does a user commit changes and undo uncommitted changes?<ul>
+<li>Users commit changes with the <code>commit</code> command and can undo with <code>reset</code> or <code>revert</code>.</li>
+</ul>
 </li>
-<li>If you know how to use a version control system (such as Git or Subversion), compare its features to those of a database system.<ol>
-<li>Does a version control system have a concept of a record?</li>
-<li>How does check-in&#x2F;checkout correspond to database concurrency control?</li>
-<li>How does a user perform a commit? How does a user undo uncommitted changes?</li>
-<li>Many version control systems save updates in difference ﬁles, which are small ﬁles that describe how to transform the previous version of the ﬁle into the new one. If a user needs to see the current version of the ﬁle, the system starts with the original ﬁle and applies all of the difference ﬁles to it. How well does this implementation strategy satisfy the needs of a database system?</li>
-</ol>
+<li>How well does saving updates as difference files satisfy the needs of a database?<ul>
+<li>This strategy mirrors database logging mechanisms that record incremental changes, ensuring that the current state can be recreated.</li>
+</ul>
 </li>
 </ol>
-<h1 id="Resources-shared-from-Community"><a href="#Resources-shared-from-Community" class="headerlink" title="Resources shared from Community"></a>Resources shared from Community</h1><ol>
+</li>
+</ol>
+<h3 id="Resources-Shared-from-the-Community"><a href="#Resources-Shared-from-the-Community" class="headerlink" title="Resources Shared from the Community"></a>Resources Shared from the Community</h3><ol>
 <li><img src="/images/Database%20Design%20and%20Implementation/Chapter-1:%20Database%20Systems/read_speed_from_storage_device.png" alt="The actual speed of reading from different storage devices"></li>
 <li><a target="_blank" rel="noopener" href="https://cheat.sh/latencies">https://cheat.sh/latencies</a> : <img src="/images/Database%20Design%20and%20Implementation/Chapter-1:%20Database%20Systems/speed_latencies.png" alt="speed_latencies"></li>
 <li><a target="_blank" rel="noopener" href="https://colin-scott.github.io/personal_website/research/interactive_latency.html">https://colin-scott.github.io/personal_website/research/interactive_latency.html</a></li>
@@ -286,23 +280,23 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamentals-properties-of-a-database"><span class="toc-number">1.</span> <span class="toc-text">Fundamentals properties of a database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Record-Storage"><span class="toc-number">2.</span> <span class="toc-text">Record Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-user-Access"><span class="toc-number">3.</span> <span class="toc-text">Multi user Access</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dealing-with-Catastrophe"><span class="toc-number">4.</span> <span class="toc-text">Dealing with Catastrophe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Management"><span class="toc-number">5.</span> <span class="toc-text">Memory Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usability"><span class="toc-number">6.</span> <span class="toc-text">Usability</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-DB-Setup"><span class="toc-number">7.</span> <span class="toc-text">Simple DB Setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exercises"><span class="toc-number">8.</span> <span class="toc-text">Exercises</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Resources-shared-from-Community"><span class="toc-number"></span> <span class="toc-text">Resources shared from Community</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamental-Properties-of-a-Database"><span class="toc-number">1.</span> <span class="toc-text">Fundamental Properties of a Database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Record-Storage"><span class="toc-number">2.</span> <span class="toc-text">Record Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-user-Access"><span class="toc-number">3.</span> <span class="toc-text">Multi-user Access</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dealing-with-Catastrophe"><span class="toc-number">4.</span> <span class="toc-text">Dealing with Catastrophe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Management"><span class="toc-number">5.</span> <span class="toc-text">Memory Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usability"><span class="toc-number">6.</span> <span class="toc-text">Usability</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-DB-Setup"><span class="toc-number">7.</span> <span class="toc-text">Simple DB Setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exercises"><span class="toc-number">8.</span> <span class="toc-text">Exercises</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Resources-Shared-from-the-Community"><span class="toc-number">9.</span> <span class="toc-text">Resources Shared from the Community</span></a></li></ol>
       </div>
     
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&text=Database-Design-and-Implementation"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&is_video=false&description=Database-Design-and-Implementation"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Database-Design-and-Implementation&body=Check out this article: https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database-Design-and-Implementation"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&name=Database-Design-and-Implementation&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&t=Database-Design-and-Implementation"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&text=Database Design and Implementation"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&is_video=false&description=Database Design and Implementation"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Database Design and Implementation&body=Check out this article: https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&title=Database Design and Implementation"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&name=Database Design and Implementation&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://niku-singh.github.io/2024/10/13/Chapter-1:%20Database-Systems/&t=Database Design and Implementation"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
